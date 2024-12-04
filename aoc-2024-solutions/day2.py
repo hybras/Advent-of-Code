@@ -1,5 +1,6 @@
 from aocp import *
 from collections import Counter
+
 def safe(report: list[int]) -> bool:
     report = report if report[0] < report[1] else report[::-1]
     diffs = [report[i] - report[i-1] for i in range(1,len(report))]
