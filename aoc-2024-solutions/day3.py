@@ -3,8 +3,7 @@ import re
 def part1(memory: str) -> int:
     mul_pat = re.compile(r"mul\((\d{1,3}),(\d{1,3})\)")
     matches = mul_pat.finditer(memory)
-    matches = [map(int,match.groups()) for match in matches]
-    total = sum([x * y for (x, y) in matches])
+    total = sum([int(x) * int(y) for (x, y) in matches])
     return total
 
 def part2(memory: str) -> None:
